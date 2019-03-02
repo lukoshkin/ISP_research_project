@@ -36,7 +36,7 @@ pattern1="Pulse1\.a0 *= *-?[0-9]+\.?[0-9]*[eE]?[+-]?[0-9]*"
 pattern2="Pulse2\.a0 *= *-?[0-9]+\.?[0-9]*[eE]?[+-]?[0-9]*"
 
 # change the amplitude of EM wave in the first line below
-for const in 0 $(seq -f "%.2f" 0 0.1 10); do
+for const in $(seq -f "%.2f" 0.1 0.1 10); do
     for phi in $(seq -f "%.2f" 0 $delta `bc <<< "2 * $pi"`); do
 	mkdir -p results/res_$const-$phi 2> /dev/null
 	cd results/res_$const-$phi
